@@ -1,0 +1,13 @@
+<div class="space"></div>
+<div class="container_main">
+    <h1>Personagens</h1>
+    <div class="container">
+        <div class="row cards">
+          <div class="col-md-4" *ngFor="let character of characters! | paginate: { itemsPerPage: 9, currentPage: page, totalItems: characters?.length }">
+            <app-cards [character]="character"></app-cards>
+          </div>
+        </div>
+    </div>
+  <pagination-controls style="z-index: 10" class="pagination" (pageChange)="page = $event"></pagination-controls>
+
+</div>
